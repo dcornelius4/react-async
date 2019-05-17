@@ -4,7 +4,7 @@ import Quotes from '../components/Quotes';
 import Loading from '../components/Loading';
 import { getCharacterQuotes } from '../services/futuramaApi';
 
-export default class CharcterQuotes extends PureComponent {
+export default class CharacterQuotes extends PureComponent {
   static propTypes = {
     count: PropTypes.number
   }
@@ -30,7 +30,7 @@ export default class CharcterQuotes extends PureComponent {
     this.fetchQuotes();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     if(prevProps.count !== this.props.count || prevState.character !== this.state.character) {
       this.fetchQuotes();
     }
