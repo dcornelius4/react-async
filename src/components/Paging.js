@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Paging({ currentPage, totalPages, nextPage, children }) {
-  return(
+  return (
     <>
       {currentPage > 1 &&
       <button onClick={() => nextPage(currentPage - 1)}>Previous Page</button>}
